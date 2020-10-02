@@ -1,0 +1,17 @@
+
+    {{> navigation}}
+    <h1>{{title}}</h1>
+    
+    <form action="/upload" method="POST" enctype="multipart/form-data"> 
+        <input type="file" name="fileToUpload"> 
+        <button>
+            Guardar en servidor
+        </button>
+     </form>
+
+
+    {{>botonMostrarArchivos}}
+    {{> archivosDescargados}}
+
+    {{!-- > sirve para buscarlo en partials --}}
+    {{> footer}} 

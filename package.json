@@ -1,0 +1,26 @@
+{
+  "name": "imageApp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server/server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.20.0",
+    "body-parser": "^1.19.0",
+    "cloudinary": "^1.19.0",
+    "dialog": "^0.3.1",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.1.0",
+    "fs-extra": "^8.1.0",
+    "globby": "^11.0.0",
+    "https": "^1.0.0",
+    "multer": "^1.4.2",
+    "nodemon": "^2.0.4"
+  }
+}

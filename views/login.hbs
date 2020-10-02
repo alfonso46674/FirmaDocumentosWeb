@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <style>
+        body, html {
+          height: 100%;
+        }
+
+        * {
+          box-sizing: border-box;
+        }
+
+        .bg-img {
+          /* background-image: url(images/campusIteso01.jfif); */
+          height: 100%; 
+
+          /*centrar la imagen*/
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: 100%;
+          position: relative;
+        }
+
+        html { 
+          /* background: url(images/campusIteso01.jfif) no-repeat center center fixed;  */
+          -webkit-background-size: cover;
+          -moz-background-size: cover;
+          -o-background-size: cover;
+          background-size: cover;
+        }
+
+        /* Add styles to the form container */
+        .container {
+          position: absolute;
+          right: 50%;
+          left: 40%;
+          margin: 20px;
+          max-width: 300px;
+          padding: 16px;
+          background-color: white;
+        }
+
+        /* Full-width input fields */
+          input[type=text], input[type=password] {
+          width: 100%;
+          padding: 15px;
+          margin: 5px 0 22px 0;
+          border: none;
+          background: #f1f1f1;
+        }
+
+        /* Set a style for the submit button */
+        .btn {
+          background-color: #062754;
+          color: white;
+          padding: 16px 20px;
+          border: none;
+          cursor: pointer;
+          width: 100%;
+        }
+
+        .btn a{
+          color: white;
+        }
+
+        .imgContainer{
+          text-align: center;
+        }
+    </style>
+  </head>
+  <body>
+
+    <div class="bg-img">
+        <form action="/envioCredenciales"  method="POST" class="container">
+          <div class="imgContainer">
+            <!-- <img  id="img1" src="images/Logo-ITESO-MinimoV.png" alt=""> -->
+          </div>  
+            <h1>Inicia Sesión</h1>
+
+            <label for="email"><b>Correo Electrónico</b></label>
+            <input type="text" name="email" id="LogEmail" required placeholder="Ingrese su correo electrónico">
+            
+
+            <label for="password"><b>Contraseña</b></label>
+            
+            <input id="passwd" type="password" placeholder="Ingrese su contraseña" name="password" required>
+        
+            <!-- <button id="UserIngresar" type="submit" class="btn btn-primary"><a href="LoggedUser.html">Ingresar</a></button> -->
+            <button id="UserIngresar" type="submit" class="btn btn-primary">Ingresar</button>
+            </form>
+            <hr>
+            {{!-- <p id="p1" class = "size-xs">¿Olvidaste tu contraseña? <a href = "#" data-target="#modeEmail" data-toggle="modal">Haz click aqui</a> </p> --}}
+        
+    </div>
+
+    <!-- Modal -->
+    {{!-- <div class="modal fade" id="modeEmail" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Ingrese su Correo Electrónico</h5>
+          </div>
+          <div class="modal-body">
+            <div class="container-fluid">
+              <div class="input-group mb-3">
+                <label for="email">Correo electrónico</label>
+                <div class="input-group">
+                  <input type="email" id="email" class="form-control" placeholder="Correo electrónico"> 
+                </div>
+                <br>
+                <button type="button" class="btn btn-primary mt-3">
+                  <a href="mailto:is714181@iteso.mx">Enviar</a>
+                </button>
+              </div>
+            </div>                 
+          </div>
+        </div>
+      </div>
+    </div> --}}
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
