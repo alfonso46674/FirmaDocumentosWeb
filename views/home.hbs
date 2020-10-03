@@ -1,17 +1,27 @@
 
-    {{> navigation}}
-    <h1>{{title}}</h1>
+   
+    
     
     <form action="/upload" method="POST" enctype="multipart/form-data"> 
         <input type="file" name="fileToUpload"> 
         <button>
-            Guardar en servidor
+            Firmar documento
         </button>
      </form>
 
 
-    {{>botonMostrarArchivos}}
+    
+    <form action="/verify" method="POST" enctype="multipart/form-data"> 
+        <input type="file" name="fileToVerify"> 
+        <button>
+            Verificar firma de documento
+        </button>
+     </form>
+
+
+     {{>botonMostrarArchivos}}
     {{> archivosDescargados}}
 
-    {{!-- > sirve para buscarlo en partials --}}
-    {{> footer}} 
+    {{>archivoVerificar}}
+
+   
