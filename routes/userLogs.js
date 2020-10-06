@@ -3,7 +3,8 @@ let credencialesBD = require('../credencialesBD.json')
 
 
 router.post('/usuarios',(req,res)=>{
-   // console.log(credencialesBD)
+   
+    
 
     res.render('home',{
         title:"Home",

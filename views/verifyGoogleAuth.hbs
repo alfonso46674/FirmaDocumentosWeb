@@ -1,0 +1,14 @@
+{{> header}}
+    <br><br>
+
+{{#each qrcode as |imagenQR|}}
+<img src="{{imagenQR.url}}" alt="">
+{{/each}}
+
+<form action="/2fa/" method="POST"> 
+        <label for="codigo"><b>Codigo doble factor</b></label>
+            <input type="text" name="token" id="token" required placeholder="Ingrese token">
+        <button>
+            Ingresar
+        </button>
+     </form>

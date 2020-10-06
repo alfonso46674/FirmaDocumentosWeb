@@ -1,26 +1,29 @@
 [
     {
-        "id":1,
+        "id": 1,
         "correo": "is713932@iteso.mx",
         "password": "123",
         "cantidadRegistros": 1,
         "ultimoRegistro": "2020-10-6 0:35:23",
-        "usuarioActivo": 0
+        "usuarioActivo": 0,
+        "enProceso2fa": 0
     },
     {
-        "id":2,
+        "id": 2,
         "correo": "prueba@1",
         "password": "123",
-        "cantidadRegistros": 17,
-        "ultimoRegistro": "2020-10-6 8:20:34",
-        "usuarioActivo": 1
+        "cantidadRegistros": 38,
+        "ultimoRegistro": "2020-10-6 12:8:45",
+        "usuarioActivo": 0,
+        "enProceso2fa": 0
     },
     {
-        "id":3,
+        "id": 3,
         "correo": "alfonso@gmail.com",
         "password": "abc",
         "cantidadRegistros": 0,
         "ultimoRegistro": "N/A",
-        "usuarioActivo": 0
+        "usuarioActivo": 0,
+        "enProceso2fa": 0
     }
 ]

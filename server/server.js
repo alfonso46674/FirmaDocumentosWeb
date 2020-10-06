@@ -6,11 +6,12 @@ const fs = require('fs')
 const bodyParser = require("body-parser");
 
 
+
 const uploadRouter = require('../routes/uploads')
 const loginRouter = require('../routes/login')
 const editAccountRouter = require('../routes/editAccount')
 const logsRouter = require('../routes/userLogs')
-
+const googleAuthRouter = require('../routes/googleAuth')
 // const globby = require('globby')
 
 const app = express()
@@ -52,6 +53,7 @@ app.use('/login',loginRouter); // para el envio de credenciales
 app.use('/firmaDocumentos',uploadRouter); // para subir y ver archivos guardados en el servidor
 app.use('/edit',editAccountRouter) // para editar la cuenta actual del usuario
 app.use('/logs',logsRouter) // para mostrar el registro de los usuarios
+app.use('/2fa',googleAuthRouter) // verificacion de doble factor con google authenticator
 
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0"; // para evitar errores de certificado
 
