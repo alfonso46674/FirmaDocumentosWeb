@@ -9,6 +9,7 @@ const bodyParser = require("body-parser");
 const uploadRouter = require('../routes/uploads')
 const loginRouter = require('../routes/login')
 const editAccountRouter = require('../routes/editAccount')
+const logsRouter = require('../routes/userLogs')
 
 // const globby = require('globby')
 
@@ -50,6 +51,7 @@ app.route('/')
 app.use('/login',loginRouter); // para el envio de credenciales
 app.use('/firmaDocumentos',uploadRouter); // para subir y ver archivos guardados en el servidor
 app.use('/edit',editAccountRouter) // para editar la cuenta actual del usuario
+app.use('/logs',logsRouter) // para mostrar el registro de los usuarios
 
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0"; // para evitar errores de certificado
 

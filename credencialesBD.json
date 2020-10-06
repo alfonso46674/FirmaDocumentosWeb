@@ -1,5 +1,6 @@
 [
     {
+        "id":1,
         "correo": "is713932@iteso.mx",
         "password": "123",
         "cantidadRegistros": 1,
@@ -7,17 +8,19 @@
         "usuarioActivo": 0
     },
     {
+        "id":2,
         "correo": "prueba@1",
-        "password": "prueba",
-        "cantidadRegistros": 14,
-        "ultimoRegistro": "2020-10-6 1:55:36",
-        "usuarioActivo": 0
+        "password": "123",
+        "cantidadRegistros": 17,
+        "ultimoRegistro": "2020-10-6 8:20:34",
+        "usuarioActivo": 1
     },
     {
+        "id":3,
         "correo": "alfonso@gmail.com",
         "password": "abc",
         "cantidadRegistros": 0,
-        "ultimoRegistro": "",
+        "ultimoRegistro": "N/A",
         "usuarioActivo": 0
     }
 ]

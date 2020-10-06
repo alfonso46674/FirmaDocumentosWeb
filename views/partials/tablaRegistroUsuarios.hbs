@@ -1,0 +1,39 @@
+<style type="text/css">
+td,th
+{
+    padding:0 15px;
+}
+
+
+</style>
+
+<table>
+
+    <thead>
+        <tr align="center">
+            <th>Id</th>
+            <th>Correo</th>
+            <th>Cantidad de Registros</th>
+            <th>Ultimo Registro</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {{#each arregloUsuarios as |arreglo|}}
+        {{!-- <tr>
+            {{#each this}}
+            <td>{{this}}</td>
+            {{/each}}
+        </tr> --}}
+
+        <tr align="center">
+            <td>{{arreglo.id}}</td>
+            <td>{{arreglo.correo}}</td>
+            <td>{{arreglo.cantidadRegistros}}</td>
+            <td>{{arreglo.ultimoRegistro}}</td>
+        </tr>
+        {{/each}}
+    </tbody>
+    
+</table>
+
