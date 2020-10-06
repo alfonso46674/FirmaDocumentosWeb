@@ -1,27 +1,30 @@
 
    
-    
-    
-    <form action="/upload" method="POST" enctype="multipart/form-data"> 
+    {{> botonLogout}}
+    <br><br>
+    <form action="/firmaDocumentos/upload" method="POST" enctype="multipart/form-data"> 
         <input type="file" name="fileToUpload"> 
         <button>
             Firmar documento
         </button>
      </form>
 
-
+    <br><br>
     
-    <form action="/verify" method="POST" enctype="multipart/form-data"> 
+    <form action="/firmaDocumentos/verify" method="POST" enctype="multipart/form-data"> 
         <input type="file" name="fileToVerify"> 
         <button>
             Verificar firma de documento
         </button>
      </form>
 
+    {{>mostrarArchivoVerificar}}
+    <br><br>
 
      {{>botonMostrarArchivos}}
-    {{> archivosDescargados}}
-
-    {{>archivoVerificar}}
+    {{> mostrarArchivosDescargados}}
+    
+    <br><br>
+    {{> botonEdicionCuenta}}
 
    

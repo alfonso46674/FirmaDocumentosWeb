@@ -1,10 +1,23 @@
 [
-    {"correo":"is713932@iteso.mx",
-    "password":"123"},
-    
-    {"correo":"prueba@1",
-        "password":"1234"},
-
-    {"correo":"alfonso@gmail.com",
-    "password":"abc"}
+    {
+        "correo": "is713932@iteso.mx",
+        "password": "123",
+        "cantidadRegistros": 1,
+        "ultimoRegistro": "2020-10-6 0:35:23",
+        "usuarioActivo": 0
+    },
+    {
+        "correo": "prueba@1",
+        "password": "prueba",
+        "cantidadRegistros": 14,
+        "ultimoRegistro": "2020-10-6 1:55:36",
+        "usuarioActivo": 0
+    },
+    {
+        "correo": "alfonso@gmail.com",
+        "password": "abc",
+        "cantidadRegistros": 0,
+        "ultimoRegistro": "",
+        "usuarioActivo": 0
+    }
 ]

@@ -87,7 +87,7 @@ router.post('/upload',uploadFile.single('fileToUpload'), async (req, res) => {
 
     // File/Document to be signed
     let rutaArchivo = '../public/files/'+fileNameToUpload
-    const filePath = path.join(__dirname, rutaArchivo);
+    let filePath = path.join(__dirname, rutaArchivo);
    // console.log(fs.statSync(filePath).isFile())
     const doc = fs.readFileSync(filePath);
 
@@ -106,16 +106,11 @@ router.post('/upload',uploadFile.single('fileToUpload'), async (req, res) => {
     const filePathSignature = path.join(__dirname, rutaSignature);
     fs.writeFileSync(filePathSignature, signature);
 
-      res.redirect(303, '/archivoCertificado'); //redirigue a la descarga del archivo
-
-     });
-
-
-//Regresa el archivo como una descarga en el navegador
-router.get('/archivoCertificado',(req,res)=>{
     
-    let rutaArchivo = '../public/files/'+fileNameToUpload
-    const filePath = path.join(__dirname, rutaArchivo);
+
+    //Descargar el archivo firmado en el navegador
+    rutaArchivo = '../public/files/'+fileNameToUpload
+    filePath = path.join(__dirname, rutaArchivo);
 
     try{
         if(fs.statSync(filePath).isFile()){
@@ -125,14 +120,16 @@ router.get('/archivoCertificado',(req,res)=>{
     }catch(e){
         console.log("Archivo no existente")
     }
-})
+
+     });
+
 
 
 //muestra los archivos guardados en el servidor
 router.post('/archivosSubidos',(req,res)=>{
 
     let archivosArreglo;
-    axios('https://localhost:8080/upload') // hace una peticion get a upload para obtener el nombre de todos los archivos guardados
+    axios('https://localhost:8080/firmaDocumentos/upload') // hace una peticion get a upload para obtener el nombre de todos los archivos guardados
         .then(response => {
             
             //Mapear el response.data a un arreglo de objetos para imprimirlo en el html
@@ -175,26 +172,17 @@ router.post('/verify',uploadFile.single('fileToVerify'),(req,res)=>{
     const result = verifier.verify(public_key, signature, 'base64');    
 
 
-    console.log('Digital Signature Verification : ' + result);
+    //console.log('Digital Signature Verification : ' + result);
 
 
 
     res.render('home',{
         title:'home',
         condition:false,
-        statusSigned : [{status: result}]
+        statusSigned : [{status: result,
+                        name:fileNameToVerify}]
     })
 })
 
-//mostrar los archivos subidos
-router.get('/verify', async (req,res)=>{
-    const paths = await globby(['**/public/verify/*']);
-    // console.log(paths);
-    const pathsNew = paths.map(function(x){
-        return x.replace("public/verify/",'')
-    })
-    res.send(pathsNew)
-    // res.send('En upload')
-})
 
 module.exports = router;
