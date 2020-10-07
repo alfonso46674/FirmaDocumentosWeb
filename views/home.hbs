@@ -1,10 +1,68 @@
+<style>
+    body,
+    html {
+        height: 100%;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    /* Add styles to the form container */
+    .container {
+        position: absolute;
+        right: 50%;
+        left: 40%;
+        margin: 40px;
+        max-width: 500px;
+        padding: 16px;
+        background-color: white;
+    }
+
+    .header {
+        position: absolute;
+        right: 90%;
+        left: 0%;
+        margin: 20px;
+        max-width: 300px;
+        padding: 16px;
+        background-color: white;
+    }
+
+    /* Full-width input fields */
+    input[type=text],
+    input[type=password] {
+        width: 100%;
+        padding: 15px;
+        margin: 5px 0 22px 0;
+        border: none;
+        background: #f1f1f1;
+    }
+
+    /* Set a style for the submit button */
+    .btn {
+        background-color: #062754;
+        color: white;
+        padding: 16px 20px;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+    }
+   
+</style>
 
    
     {{> header}}
     <br><br>
-    <form action="/firmaDocumentos/upload" method="POST" enctype="multipart/form-data"> 
+
+    <div class="container">
+        <h1>Página Principal</h1>
+        <br>
+        <h2>Firma de Documentos</h2>
+        <br>
+        <form action="/firmaDocumentos/upload" method="POST" enctype="multipart/form-data"> 
         <input type="file" name="fileToUpload"> 
-        <button>
+        <button class="btn">
             Firmar documento
         </button>
      </form>
@@ -13,23 +71,34 @@
     
     <form action="/firmaDocumentos/verify" method="POST" enctype="multipart/form-data"> 
         <input type="file" name="fileToVerify"> 
-        <button>
+        <button class="btn">
             Verificar firma de documento
         </button>
      </form>
 
     {{>mostrarArchivoVerificar}}
-    <br><br>
+
+     <br><br>
 
      {{>botonMostrarArchivos}}
     {{> mostrarArchivosDescargados}}
     
     <br><br>
+    <h2>Editar Cuenta</h2>
     {{> botonEdicionCuenta}}
 
     <br><br>
+    <h2>Registro de Usuarios</h2>
+    <br>
     {{> botonMostrarRegistros}}
-    {{> tablaRegistroUsuarios}}
+    
+    <div class="table">
+        {{> tablaRegistroUsuarios}}
+    </div>
+    
+    </div>
+    
+   
 
      
 

@@ -1,10 +1,61 @@
-<form action="/registro/nuevoUsuario" method="POST"> 
+<style>
+    body,
+    html {
+      height: 100%;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    /* Add styles to the form container */
+    .container {
+      position: absolute;
+      right: 50%;
+      left: 40%;
+      margin: 20px;
+      max-width: 300px;
+      padding: 16px;
+      background-color: white;
+    }
+    
+    
+    /* Full-width input fields */
+    input[type=text],
+    input[type=password] {
+      width: 100%;
+      padding: 15px;
+      margin: 5px 0 22px 0;
+      border: none;
+      background: #f1f1f1;
+    }
+
+    /* Set a style for the submit button */
+    .btn {
+      background-color: #062754;
+      color: white;
+      padding: 16px 20px;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+    }
+   
+  </style>
+
+
+
+<br>
+<div >
+    <form action="/registro/nuevoUsuario" method="POST" class="container">
+            <h1>Registro de Usuario</h1>
             <label for="password"><b>Correo</b></label>
             <input type="text" name="correo" id="correo" required placeholder="Ingrese correo">
 
             <label for="password"><b>Contraseña</b></label>
-            <input type="text" name="password" id="password" required placeholder="Ingrese contraseña">
-        <button>
-            Registrar Usuario
-        </button>
-     </form>
+            <input type="password" name="password" id="password" required placeholder="Ingrese contraseña">
+            <button class="btn btn-primary">
+                Registrar Usuario
+            </button>
+        
+    </form>
+</div>
