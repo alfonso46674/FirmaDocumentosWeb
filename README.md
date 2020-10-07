@@ -1,11 +1,13 @@
-#Página web con certificado TLS que tiene como función firmar y verificar documentos de texto, además de poder ingresar con autenticación multifactor.
+# Página web con certificado TLS que tiene como función firmar y verificar documentos de texto, además de poder ingresar con autenticación multifactor.
 
 
 
-##Las carpetas y archivos ignorados al subir fueron:
-###Directorio "KeysFirma" -> Guarda las llaves necesarias para hacer la firma de documentos
-###Directorio "multifactorAuth" -> Guarda el secreto necesario para hacer la autenticación multifactor
-###Archivospara las llaves pública y privada para el certificado TLS
+## Las carpetas y archivos ignorados al subir fueron:
+### Directorio "KeysFirma" -> Guarda las llaves necesarias para hacer la firma de documentos
+
+### Directorio "multifactorAuth" -> Guarda el secreto necesario para hacer la autenticación multifactor
+
+### Archivospara las llaves pública y privada para el certificado TLS
 
 Los usuarios están en el archivo credencialesBD
 
