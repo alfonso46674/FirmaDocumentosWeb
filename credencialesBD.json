@@ -12,8 +12,8 @@
         "id": 2,
         "correo": "prueba@1",
         "password": "123",
-        "cantidadRegistros": 38,
-        "ultimoRegistro": "2020-10-6 12:8:45",
+        "cantidadRegistros": 39,
+        "ultimoRegistro": "2020-10-6 20:30:4",
         "usuarioActivo": 0,
         "enProceso2fa": 0
     },
@@ -25,5 +25,14 @@
         "ultimoRegistro": "N/A",
         "usuarioActivo": 0,
         "enProceso2fa": 0
+    },
+    {
+        "id": 4,
+        "correo": "pruebaRegistro",
+        "password": "prueba",
+        "cantidadRegistros": 0,
+        "ultimoRegistro": "",
+        "usuarioActivo": 0,
+        "enProceso2fa": 1
     }
 ]

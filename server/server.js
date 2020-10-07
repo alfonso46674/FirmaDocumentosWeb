@@ -12,6 +12,7 @@ const loginRouter = require('../routes/login')
 const editAccountRouter = require('../routes/editAccount')
 const logsRouter = require('../routes/userLogs')
 const googleAuthRouter = require('../routes/googleAuth')
+const registerUserRouter = require('../routes/registerUser')
 // const globby = require('globby')
 
 const app = express()
@@ -54,6 +55,7 @@ app.use('/firmaDocumentos',uploadRouter); // para subir y ver archivos guardados
 app.use('/edit',editAccountRouter) // para editar la cuenta actual del usuario
 app.use('/logs',logsRouter) // para mostrar el registro de los usuarios
 app.use('/2fa',googleAuthRouter) // verificacion de doble factor con google authenticator
+app.use('/registro',registerUserRouter) // para registrar nuevos usuarios en la BD
 
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0"; // para evitar errores de certificado
 
