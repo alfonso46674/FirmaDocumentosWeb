@@ -1,24 +1,23 @@
 const router = require('express').Router()
 let credencialesBD = require('../credencialesBD.json')
-let multifactorAuth = require('../multifactorAuth/secret.json')
 const speakeasy = require('speakeasy')
 const fs = require('fs')
 const path = require('path')
 const dialog = require('dialog')
 
 router.post('/',(req,res)=>{
+
+    //obtener el usuario con su bandera enProceso2fa en 1
+    let index = credencialesBD.findIndex(c => c.enProceso2fa == 1);
+
     let {token} = req.body
     let verified = speakeasy.totp.verify({
-        secret: multifactorAuth[0].idAscii,
+        secret: credencialesBD[index].secretQR,
         encoding: 'ascii',
         token: token
     })
 
     if(verified){ // fue exitosa al autenticación multifactor
-
-        
-        //obtener el usuario con su bandera enProceso2fa en 1
-        let index = credencialesBD.findIndex(c => c.enProceso2fa == 1);
 
         //Actualizar el contador de registros y el dia del registro
         let today = new Date();

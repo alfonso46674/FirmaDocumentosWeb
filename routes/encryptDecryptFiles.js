@@ -3,7 +3,7 @@ const multer = require('multer')
 const path = require('path')
 const fs = require('fs')
 const axios = require('axios')
-const functionsEncryption = require('../EncryptionModule/encryptionFunctions')
+
 const encryptionFunctions = require('../EncryptionModule/encryptionFunctions')
 
 let fileNameToEncrypt='';

@@ -4,6 +4,8 @@ const fs = require('fs')
 const path = require('path')
 const dialog = require('dialog')
 const argon2 = require('argon2')
+const speakeasy = require('speakeasy')
+const qrcode = require('qrcode')
 
 //Llevar a pagina de registro de usuario
 router.get('/', (req, res) => {
@@ -25,27 +27,52 @@ router.post('/nuevoUsuario', async (req, res) => {
 
             //obtener el nuevo id del usuario a ingresar dependiendo si esta vacia la BD o no
             let id = 0;
-            if(credencialesBD.length == 0) id = 0;
-            else  id = credencialesBD[credencialesBD.length - 1].id + 1
+            if (credencialesBD.length == 0) id = 0;
+            else id = credencialesBD[credencialesBD.length - 1].id + 1
 
-            //meter el nuevo usuario a la BD
-            credencialesBD.push({
-                "id": id,
-                "correo": correo,
-                "password": hash,
-                "cantidadRegistros": 0,
-                "ultimoRegistro": "",
-                "usuarioActivo": 0,
-                "enProceso2fa": 0
+
+            //Generar secret para verificacion de doble factor
+            let date = new Date();
+            let secret = speakeasy.generateSecret({
+                name: "ProyectoSeguridad_" + date.getMinutes() + date.getSeconds()
             })
 
-            //Actualizar el json de la BD
-            let rutaBD = '../credencialesBD.json'
-            const filePathBD = path.join(__dirname, rutaBD);
-            fs.writeFileSync(filePathBD, JSON.stringify(credencialesBD));
+            //Generar codigo QR
+            qrcode.toDataURL(secret.otpauth_url, (err, data) => {
+                if (err) throw err;
+                else {
 
-            //mandar al login
-            res.render('login')
+                    //meter el nuevo usuario a la BD
+                    credencialesBD.push({
+                        "id": id,
+                        "correo": correo,
+                        "password": hash,
+                        "cantidadRegistros": 0,
+                        "ultimoRegistro": "",
+                        "usuarioActivo": 0,
+                        "enProceso2fa": 0,
+                        "secretQR": secret.ascii
+                    })
+
+                    //Actualizar el json de la BD
+                    let rutaBD = '../credencialesBD.json'
+                    const filePathBD = path.join(__dirname, rutaBD);
+                    fs.writeFileSync(filePathBD, JSON.stringify(credencialesBD));
+
+
+
+
+
+                    //mandar al login
+                    res.render('login',{
+                        title:"Login with QR",
+                        condition:false,
+                        qrcode:[{url:data}] // pasarle la url del codigo qr a login
+                    })
+                }
+            })
+
+
         } catch (err) {
             console.log(err);
         }

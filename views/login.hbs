@@ -83,11 +83,9 @@
 
 <body>
 
-  <div class="bg-img">
+  <div class="container">
     <form action="/login/envioCredenciales" method="POST" class="container">
-      <div class="imgContainer">
-        <!-- <img  id="img1" src="images/Logo-ITESO-MinimoV.png" alt=""> -->
-      </div>
+
       <h1>Inicia Sesión</h1>
 
       <label for="email"><b>Correo Electrónico</b></label>
@@ -104,8 +102,19 @@
     <hr>
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     {{> botonRegistroUsuarios}}
+
+
+  {{!-- Mostrar Codigo QR --}}
+    <div class="imgContainer">
+      {{#each qrcode as |imagenQR|}}
+      <img src="{{imagenQR.url}}" alt="">
+      {{/each}}
+    </div>
+
+
     </form>
-    {{!-- <p id="p1" class = "size-xs">¿Olvidaste tu contraseña? <a href = "#" data-target="#modeEmail" data-toggle="modal">Haz click aqui</a> </p> --}}
+
+    
 
 
 

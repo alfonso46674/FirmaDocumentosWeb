@@ -1,6 +1,5 @@
 const router = require('express').Router()
 let credencialesBD = require('../credencialesBD.json')
-let multifactorAuth = require('../multifactorAuth/secret.json')
 const fs = require('fs')
 const path = require('path')
 let dialog = require('dialog')
@@ -34,37 +33,15 @@ router.route('/envioCredenciales')
         })
 
 
-        //generar qrcode
-        qrcode.toDataURL(secret.otpauth_url, (err, data) => {
+         //poner la bandera del usuario de "enProceso2fa" en 1 para decir que se va a pasar a la verificacion
+         let index = credencialesBD.findIndex(c => c.correo == email);
+         credencialesBD[index].enProceso2fa = 1;
 
-          if (err) throw err;
+         let rutaBD = '../credencialesBD.json'
+         const filePathBD = path.join(__dirname, rutaBD);
+         fs.writeFileSync(filePathBD, JSON.stringify(credencialesBD));
 
-          else { // si se genero la url para el codigo qr se avanza, y se pasa dicha url como argumento
-
-            //Guardar el secret ascii para futuras referencias
-            multifactorAuth[0].idAscii = secret.ascii
-            let rutaSecret = '../multifactorAuth/secret.json'
-            const filePathSecret = path.join(__dirname, rutaSecret);
-            fs.writeFileSync(filePathSecret, JSON.stringify(multifactorAuth));
-
-
-            //poner la bandera del usuario de "enProceso2fa" en 1 para decir que se va a pasar a la verificacion
-            let index = credencialesBD.findIndex(c => c.correo == email);
-            credencialesBD[index].enProceso2fa = 1;
-
-            let rutaBD = '../credencialesBD.json'
-            const filePathBD = path.join(__dirname, rutaBD);
-            fs.writeFileSync(filePathBD, JSON.stringify(credencialesBD));
-
-            //renderizar la siguiente pagina de verificacion
-            res.render('verifyGoogleAuth', {
-              title: "Google Authenticator",
-              condition: false,
-              qrcode: [{ url: data }]
-            });
-          }
-
-        })
+         res.render('verifyGoogleAuth')
 
 
 

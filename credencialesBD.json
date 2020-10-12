@@ -1,1 +1,21 @@
-[{"id":0,"correo":"prueba@1","password":"$argon2i$v=19$m=4096,t=3,p=1$/D9phsj+XUvOWQsFTjSwwg$SiF+7AA/SnSZfjPfRREkMS+Exc53Q0DZfMDynoFUw4M","cantidadRegistros":4,"ultimoRegistro":"2020-10-10 18:55:47","usuarioActivo":1,"enProceso2fa":0}]
+[
+    {
+        "id": 0,
+        "correo": "prueba@1",
+        "password": "$argon2i$v=19$m=4096,t=3,p=1$/D9phsj+XUvOWQsFTjSwwg$SiF+7AA/SnSZfjPfRREkMS+Exc53Q0DZfMDynoFUw4M",
+        "cantidadRegistros": 5,
+        "ultimoRegistro": "2020-10-12 14:29:56",
+        "usuarioActivo": 0,
+        "enProceso2fa": 0
+    },
+    {
+        "id": 1,
+        "correo": "hola@1",
+        "password": "$argon2i$v=19$m=4096,t=3,p=1$4hdKvDuik5GPu0FolfLPDw$hHFeLI4jnF6Bw64IYUIuSkCgeKf9+IOK33xRgEfQAj0",
+        "cantidadRegistros": 2,
+        "ultimoRegistro": "2020-10-12 15:33:5",
+        "usuarioActivo": 0,
+        "enProceso2fa": 0,
+        "secretQR": "^T>b3MT(ZAEpp0aVn)F#fg7s/ea*,{p2"
+    }
+]

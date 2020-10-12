@@ -54,10 +54,10 @@
 {{> header}}
 <br><br>
 <div class="container">
-    <h1>Autenticación Multifactor por G</h1>
-    {{#each qrcode as |imagenQR|}}
+    <h1>Autenticación Multifactor</h1>
+    {{!-- {{#each qrcode as |imagenQR|}}
     <img src="{{imagenQR.url}}" alt="">
-    {{/each}}
+    {{/each}} --}}
 
     <form action="/2fa/" method="POST">
         <label for="codigo"><b>Codigo doble factor</b></label>
