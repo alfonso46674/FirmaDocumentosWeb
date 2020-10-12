@@ -113,7 +113,7 @@ router.post('/upload',uploadFile.single('fileToUpload'), async (req, res) => {
     filePath = path.join(__dirname, rutaArchivo);
 
     try{
-        if(fs.statSync(filePath).isFile()){
+        if(fs.statSync(filePath).isFile()){ // si el archivo que esta en afilePath es un archivo
             res.download(filePath)
 
         }

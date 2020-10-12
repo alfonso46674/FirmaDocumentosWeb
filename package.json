@@ -15,6 +15,7 @@
     "axios": "^0.20.0",
     "body-parser": "^1.19.0",
     "cloudinary": "^1.19.0",
+    "crypto": "^1.0.1",
     "dialog": "^0.3.1",
     "express": "^4.17.1",
     "express-handlebars": "^5.1.0",

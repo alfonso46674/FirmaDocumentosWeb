@@ -23,10 +23,14 @@ router.post('/nuevoUsuario', async (req, res) => {
             //Usar argon2 para encriptar contraseña
             const hash = await argon2.hash(password)
 
+            //obtener el nuevo id del usuario a ingresar dependiendo si esta vacia la BD o no
+            let id = 0;
+            if(credencialesBD.length == 0) id = 0;
+            else  id = credencialesBD[credencialesBD.length - 1].id + 1
+
             //meter el nuevo usuario a la BD
-            
             credencialesBD.push({
-                "id": credencialesBD[credencialesBD.length - 1].id + 1,
+                "id": id,
                 "correo": correo,
                 "password": hash,
                 "cantidadRegistros": 0,
