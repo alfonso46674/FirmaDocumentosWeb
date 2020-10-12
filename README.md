@@ -21,3 +21,5 @@ https://www.npmjs.com/package/argon2
 Link para saber como hacer login multifactor
 https://www.youtube.com/watch?v=6mxA9Zp8600&feature=youtu.be 
 
+Link para encriptacion y desencriptacion
+https://gist.github.com/vlucas/2bd40f62d20c1d49237a109d491974eb 
