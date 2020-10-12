@@ -1,7 +1,10 @@
-<form action="/edit/changePassword" method="POST"> 
-            <label for="password"><b>Nueva Contraseña</b></label>
-            <input type="text" name="password" id="password" required placeholder="Ingrese contraseña">
-        <button class="btn">
-            Editar Cuenta
-        </button>
-     </form>
+<form action="/edit/changePassword" method="POST">
+    <label for="oldPassword"><b>Contraseña Anterior</b></label>
+    <input type="text" name="oldPassword" id="oldPassword" required placeholder="Ingrese contraseña anterior">
+
+    <label for="newPassword"><b>Nueva Contraseña</b></label>
+    <input type="text" name="newPassword" id="newPassword" required placeholder="Ingrese nueva contraseña">
+    <button class="btn">
+        Editar Cuenta
+    </button>
+</form>

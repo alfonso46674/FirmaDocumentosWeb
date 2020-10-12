@@ -78,7 +78,11 @@
         </button>
      </form>
 
+
     <br><br>
+    {{>mostrarArchivoVerificar}}
+    <br><br>
+    
     <form action="/encryptDecrypt/encrypt" method="POST" enctype="multipart/form-data"> 
         <input type="file" name="fileToEncrypt"> 
         <button class="btn">
@@ -98,7 +102,7 @@
 
 
 
-    {{>mostrarArchivoVerificar}}
+    
 
      <br><br>
 

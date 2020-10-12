@@ -11,10 +11,10 @@
     {
         "id": 1,
         "correo": "hola@1",
-        "password": "$argon2i$v=19$m=4096,t=3,p=1$4hdKvDuik5GPu0FolfLPDw$hHFeLI4jnF6Bw64IYUIuSkCgeKf9+IOK33xRgEfQAj0",
-        "cantidadRegistros": 2,
-        "ultimoRegistro": "2020-10-12 15:33:5",
-        "usuarioActivo": 0,
+        "password": "$argon2i$v=19$m=4096,t=3,p=1$+JNS68Tvop6f35rWBXbprw$e3ln39EYnzk3FVmLMUWD1x51t9g28rSjyuaERUyQP6o",
+        "cantidadRegistros": 6,
+        "ultimoRegistro": "2020-10-12 15:49:27",
+        "usuarioActivo": 1,
         "enProceso2fa": 0,
         "secretQR": "^T>b3MT(ZAEpp0aVn)F#fg7s/ea*,{p2"
     }
