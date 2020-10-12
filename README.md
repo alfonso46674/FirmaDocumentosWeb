@@ -1,4 +1,4 @@
-# Página web con certificado TLS que tiene como función firmar y verificar documentos de texto, además de poder ingresar con autenticación multifactor.
+# Página web con certificado TLS que tiene como función firmar y verificar, y encriptar y desencriptar documentos de texto, además de poder ingresar con autenticación multifactor.
 
 
 
