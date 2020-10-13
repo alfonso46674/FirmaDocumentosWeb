@@ -4,7 +4,7 @@ const path = require('path')
 const fs = require('fs')
 const axios = require('axios')
 
-const encryptionFunctions = require('../EncryptionModule/encryptionFunctions')
+const encryptionFunctions = require('../Modules/Encryption/encryptionFunctions')
 
 let fileNameToEncrypt='';
 let fileNameToDecrypt='';

@@ -6,6 +6,8 @@ const dialog = require('dialog')
 const argon2 = require('argon2')
 const speakeasy = require('speakeasy')
 const qrcode = require('qrcode')
+//const multerCustom = require('../Modules/UploadFilesToServer/multer')
+
 
 //Llevar a pagina de registro de usuario
 router.get('/', (req, res) => {
@@ -34,7 +36,7 @@ router.post('/nuevoUsuario', async (req, res) => {
             //Generar secret para verificacion de doble factor
             let date = new Date();
             let secret = speakeasy.generateSecret({
-                name: "ProyectoSeguridad_" + date.getMinutes() + date.getSeconds()
+                name: correo + date.getMinutes() + date.getSeconds()
             })
 
             //Generar codigo QR
@@ -59,7 +61,14 @@ router.post('/nuevoUsuario', async (req, res) => {
                     const filePathBD = path.join(__dirname, rutaBD);
                     fs.writeFileSync(filePathBD, JSON.stringify(credencialesBD));
 
-
+                    //Crear una carpeta para los archivos del usuario
+//                   multerCustom.createDir('/public/'+correo)
+//                   multerCustom.createDir('/public/'+correo+'/general')
+//                   multerCustom.createDir('/public/'+correo+'/firmado')
+//                   multerCustom.createDir('/public/'+correo+'/verificar')
+//                   multerCustom.createDir('/public/'+correo+'/encriptado')
+//                   multerCustom.createDir('/public/'+correo+'/desencriptado')
+                   
 
 
 

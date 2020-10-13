@@ -5,7 +5,6 @@ const globby = require('globby')
 const fs = require('fs')
 const axios = require('axios')
 const crypto = require('crypto');
-const { CLIENT_RENEG_LIMIT } = require('tls')
 
 let fileNameToUpload='';
 let fileNameToVerify='';

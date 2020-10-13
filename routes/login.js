@@ -4,7 +4,6 @@ const fs = require('fs')
 const path = require('path')
 let dialog = require('dialog')
 const speakeasy = require('speakeasy')
-const qrcode = require('qrcode')
 const  argon2 = require('argon2')
 
 
